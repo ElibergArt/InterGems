@@ -5,6 +5,10 @@ body {
     margin: 0;
 }
 
+body.fixed-nav {
+  padding-top: 100px; /* замените 100px на высоту вашего меню */
+}
+
 .test {
     display: inline-block;
     margin-left: 0px;
@@ -78,16 +82,20 @@ body {
     align-content: space-around;
     /* border: 1px solid black; */
     box-sizing: border-box;
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
     z-index: 999;
 }
 
 .top_menu>* {
     flex: 1;
+    top: 0;
 }
 
+nav {
+    position: sticky;
+
+}
 .top_menu_button {
     /* display: block; */
     /* text-align: center; */

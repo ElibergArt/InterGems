@@ -1,9 +1,14 @@
 <html>
 <!doctype html>
+
 <head>
-    <title>InterGems – <?php echo $title;?></title>
+    <title>InterGems –
+        <?php echo $title; ?>
+    </title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <div class="index">
     <div class="igems">
@@ -29,6 +34,7 @@
 
     </div>
 </div>
+
 <div class="top_menu">
     <a href="/index.php" class="top_menu">
         <div class="top_menu_button">
@@ -46,11 +52,13 @@
         </div>
     </a>
 </div>
-<body>
-		<?php echo $content; ?>
-        <div>
 
-        </div>
+
+<body>
+    <?php echo $content; ?>
+    <div>
+
+    </div>
 </body>
 <footer>
     <div class="footer-holder">
@@ -68,5 +76,5 @@
         </div>
     </div>
 </footer>
-
-</html>
+<script src="script/sticky_menu.js">
+</html >
