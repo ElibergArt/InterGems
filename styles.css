@@ -78,6 +78,10 @@ body {
     align-content: space-around;
     /* border: 1px solid black; */
     box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
 }
 
 .top_menu>* {
