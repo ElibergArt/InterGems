@@ -6,7 +6,7 @@ body {
 }
 
 body.fixed-nav {
-  padding-top: 100px; /* замените 100px на высоту вашего меню */
+  padding-top: 100px;   /*для меню*/
 }
 
 .test {
@@ -30,6 +30,7 @@ body.fixed-nav {
     font-size: 300%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-shadow: 2px 2px 10px rgb(55, 55, 55);
+    z-index: 200;
 }
 
 .index {
@@ -41,6 +42,7 @@ body.fixed-nav {
     background-position: center;
     margin: 0;
     padding-left: 10px;
+    z-index: 999;
 
 }
 
@@ -58,6 +60,7 @@ body.fixed-nav {
     padding-right: 5%;
     justify-content: space-between;
     align-content: center;
+    margin-bottom: 2%;
 }
 
 
@@ -74,7 +77,7 @@ body.fixed-nav {
 }
 
 .top_menu {
-    background-color: rgb(209, 209, 209);
+    background-color: rgb(182, 207, 211);
     display: flex;
     flex-wrap: wrap;
     padding: 0;
@@ -112,8 +115,47 @@ nav {
 
 .top_menu_button:hover {
     transition: 200ms linear !important;
-    background-color: rgb(106, 106, 106);
+    background-color: rgb(93, 175, 188);
+    opacity: 80%;
+}
+/* EXPERIMENTAL!!! Rays from gems */
+.gem_rays_container {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    /* border: 1px solid black; */
+    width: 100%;
+    z-index: -1;
+    /* opacity: 0; */
+}
 
+.green_ray  {
+background-color: green;
+width: 200px;
+height: 20px;
+/* opacity: 0; */
+box-shadow: 0px 250px 40px pink;
+}
+
+.blue_ray  {
+    background-color: blue;
+    width: 24%;
+    height: 20px;
+    /* opacity: 0; */
+    box-shadow: 0px 250px 70px rgb(11, 165, 192);
+}
+
+.red_ray  {
+    background-color: lightcoral;
+    width: 25%;
+    height: 20px;
+    /* opacity: 0; */
+    box-shadow: 0px 250px 70px lightcoral;
+}
+
+.no_ray {
+    width: 10%;
+    height: 20px;
 }
 
 .top_menu_button p {
@@ -359,6 +401,23 @@ footer {
     opacity: 0;
     animation: ani 1.5s forwards;
     background: linear-gradient(145deg, #e7e7e7, #f0f0f0);
+    box-shadow: 41px 41px 82px #b8b8b8,
+        -41px -41px 82px #ffffff;
+}
+
+/* product card */
+
+.productcard_container   {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border: 1px solid black;
+
+}
+
+.productcard_album  {
+    outline: none;
+    border-radius: 1em;
     box-shadow: 41px 41px 82px #b8b8b8,
         -41px -41px 82px #ffffff;
 }

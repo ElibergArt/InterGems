@@ -16,14 +16,17 @@ if ($result = $conn->query($sql)) {
     ";
     echo "<div class='stock_base'>";
     foreach ($result as $row) {
-        echo "<div class='product_card'>
-            <h4>
-                " . $row['color'] . " " . $row['gem'] . "
-            </h4>
-            <img src='" . $row['img_path'] . "' style='height: 200px; width: 200px' alt='Image'> 
-            <p>Weight: " . $row['weight'] . "</p>
-            <p>Cut: " . $row['cut'] . "<p>       
-    </div>";
+        echo "
+        <a href='productcard.php?id=" . $row['id'] . "'>
+            <div class='product_card'>
+                <h4>
+                    " . $row['color'] . " " . $row['gem'] . "
+                </h4>
+                    <img src='" . $row['img_path'] . "' style='height: 200px; width: 200px' alt='Image'> 
+                    <p>Weight: " . $row['weight'] . "</p>
+                    <p>Cut: " . $row['cut'] . "<p>       
+                 </a>
+             </div>";
     }
     echo "</div>";
     $result->free();
