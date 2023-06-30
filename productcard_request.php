@@ -1,0 +1,71 @@
+<?php
+// Проверка, что параметр id передан в URL
+if (!isset($_GET['id'])) {
+    header("Location: stock.php");
+    exit();
+}
+
+// Получение значения параметра id из URL
+$id = $_GET['id'];
+
+// Подключение к базе данных
+$servername = "localhost";
+$username = "site";
+$password = "4316464";
+$dbname = "intergems";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Проверка соединения
+if (!$conn) {
+    die("Ошибка соединения: " . mysqli_connect_error());
+}
+
+// Запрос SELECT для получения информации о товаре
+$sql = "SELECT * FROM tm WHERE id='$id'";
+$result = mysqli_query($conn, $sql);
+
+// Проверка результата запроса
+if ($result) {
+    // Получение данных из результата запроса
+    $row = mysqli_fetch_assoc($result);
+    if ($row) {
+        // Формирование страницы товара на основе полученных данных
+        //echo "<h1>". $row['color']. ' ' . $row['gem'] . "</h1>";
+        //echo "<img height='100px' src='" . $row['img_path'] . "' alt='image'>"; //remove height at end
+        echo "<div class='productcard_container'>
+        <div class='productcard_album'>
+            <img  src=' " . $row['img_path'] . "' alt=''>
+        </div>
+        <div class='productcard_text'>
+        <h2> " . $row['gem'] . "</h2>
+        <p>Color: " . $row['color'] . "</p>
+        <p>Weight: " . $row['weight'] . "</p> 
+        <p>Cut: " . $row['cut'] . "  </p> 
+    <p>Size: " . $row['size_w'] . "x" . $row['size_h'] . " </p>
+    <p>Origin: " . $row['origin'] . "</p>
+    <p>Includes: " . $row['includes'] . "</p>
+    <p>About: " . $row['add_note'] . "</p>
+    </div>
+    </div>";
+        // echo "<p>" . $row['description'] . "</p>";
+        // echo "<p>" . $row['price'] . "</p>";
+
+
+    } else {
+        // Если метод mysqli_fetch_assoc() вернул null
+        echo "Ошибка: товар не найден";
+    }
+} else {
+    // Если запрос не выполнен
+    echo "Ошибка выполнения запроса: " . mysqli_error($conn);
+}
+
+// Закрытие соединения
+mysqli_close($conn);
+
+
+
+?>
+
+<!-- gem, color, cut, size_w, size_h, weigh, img_path, origin, includes, add_type, add_note  -->
