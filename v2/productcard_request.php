@@ -5,8 +5,15 @@ if (!isset($_GET['id'])) {
     exit();
 }
 
+if (!isset($_GET['category'])) {
+     header("Location: 405.php");
+    exit();
+}
+
+
 // Получение значения параметра id из URL
 $id = $_GET['id'];
+$category = $_GET['category'];
 
 // Подключение к базе данных
 $servername = "localhost";
@@ -22,7 +29,7 @@ if (!$conn) {
 }
 
 // Запрос SELECT для получения информации о товаре
-$sql = "SELECT * FROM tm WHERE id='$id'";
+$sql = "SELECT * FROM $category WHERE id='$id'";
 $result = mysqli_query($conn, $sql);
 
 // Проверка результата запроса
