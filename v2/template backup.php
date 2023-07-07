@@ -1,3 +1,5 @@
+<!-- Данная легаси версия не содержит выпадающего меню каталога -->
+
 <html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,46 +24,30 @@
 
     </div>
     <div class="menu-bar">
-    <a href="index.php">
-        <div class="menu-button">
-            <p>О компании</p>
-        </div>
-    </a>
-    <div class="menu-button-dropdown">
-        <a href="stock.php">
+        <a href="index.php">
             <div class="menu-button">
-                <p>Каталог камней</p>
+                <p>О компании</p>
             </div>
         </a>
-        <div class="submenu">
-            <a href="#">
-                <div class="menu-button">
-                    <p>Турмалин</p>
-                </div>
-            </a>
-            <a href="#">
-                <div class="menu-button">
-                    <p>Гранат</p>
-                </div>
-            </a>
-            <a href="#">
-                <div class="menu-button">
-                    <p>Танзанит</p>
-                </div>
-            </a>
-        </div>
+        <a href="stock.php">
+            <div class="menu-button dropdown">
+                <p> Каталог камней
+                </p>
+                <div class="menu-button-dropdown-content"></div>
+
+            </div>
+        </a>
+        <a href="#">
+            <div class="menu-button">
+                <p> Ближайшие мероприятия</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="menu-button">
+                <p>Как связаться</p>
+            </div>
+        </a>
     </div>
-    <a href="#">
-        <div class="menu-button">
-            <p>Ближайшие мероприятия</p>
-        </div>
-    </a>
-    <a href="#">
-        <div class="menu-button">
-            <p>Как связаться</p>
-        </div>
-    </a>
-</div>
     <div class="bodypage">
         <?php echo $content; ?>
     </div>
