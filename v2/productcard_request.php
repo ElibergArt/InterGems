@@ -47,9 +47,9 @@ if ($result) {
         <div class='productcard_text'>
             <h2> " . $row['gem'] . "</h2>
             <p>Цвет: " . $row['color'] . "</p>
-            <p>Вес: " . $row['weight'] . "</p> 
+            <p>Вес: " . $row['weight'] . " ct</p> 
             <p>Огранка: " . $row['cut'] . "  </p> 
-        <p>Размер: " . $row['size_w'] . "x" . $row['size_h'] . " </p>
+        <p>Размер: " . $row['size_w'] . "x" . $row['size_h'] . " мм</p>
         <p>Происхождение: " . $row['origin'] . "</p>
         <p>Включения: " . $row['includes'] . "</p>
         <p>Комментарии: " . $row['add_note'] . "</p>
