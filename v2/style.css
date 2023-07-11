@@ -89,7 +89,7 @@ body {
     padding: 5px;
     transition: 0.2s linear;
     height: max-content;
-    
+    border: 1px solid black;
 }
 
 .menu-button:hover {

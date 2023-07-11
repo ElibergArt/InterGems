@@ -3,5 +3,5 @@ $title="stock";
 ob_start();
 include "request.php";
 $content = ob_get_clean();
-include "template.php";
+include "template_side.php";
 ?>

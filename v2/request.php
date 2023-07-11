@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 if (!isset($_GET['category'])) {
-    // header("Location: 404.php");
+    header("Location: 404.php");
     exit();
 }
 
@@ -33,12 +33,14 @@ $field = mysqli_fetch_field_direct($result, 0);
 // $field_table = str_replace("tm", "Tourmaline", $field->table);
 echo "<div class='stock_table-name'>
     <h2> " . $category . " </h2>
-    </div>
+    </div>  
     ";
 echo "<div class='stock_base'>";
 foreach ($result as $row) {
     echo "
-        <a href='productcard.php?category=". $category ."&id=" . $row['id'] . "'>
+    <a href='productcard.php?category=" . $category . "&id=" . $row['id'] . "'>
+    
+        
             <div class='product_card'>
                 <h4>
                     " . $row['color'] . " " . $row['gem'] . "

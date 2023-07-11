@@ -15,6 +15,7 @@
 
 
     <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/style_side.css">
 </head>
 
 <body>
@@ -31,7 +32,7 @@
             </div>
             <nav class="navbar">
                 <a class="nav-link" href="index.php">О нас</a>
-                <a class="nav-link" href="#">Каталог</a>
+                <a class="nav-link" href="catalogue.php">Каталог</a>
                 <a class="nav-link" href="#">Мероприятия</a>
                 <a class="nav-link" href="#">Контакты</a>
             </nav>
@@ -39,13 +40,13 @@
     </div>
 
 </div>
-<div class="intro">
-    <div class="container">
-        <div class="intro_title">
+<div class="intro side">
+    <!-- <div class="container"> -->
+        <!-- <div class="intro_title">
             <h1 class="intro_bigtitle">InterGems</h1>
             <h2 class="intro_stitle">Премиальная огранка и потрясающее качество</h2>
-        </div>
-    </div>
+        </div> -->
+    <!-- </div> -->
 </div>
 <div class="page_content">
     <?php echo $content
@@ -53,7 +54,6 @@
 </div>
 <footer>
     <script>
-        // Удалить CSS-класс square-transition
         const headeranim = document.querySelector('.header-inner');
         headeranim.classList.remove('header-inner-transition');
 

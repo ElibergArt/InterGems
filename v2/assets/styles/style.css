@@ -29,7 +29,7 @@ h5 {
     position: absolute;
     top: 0;
     left: 0;
-    height: 60vh;
+    /* height: 60vh; */
     width: 100%;
     /* max-width: 1900px; */
     z-index: 100;
@@ -57,6 +57,62 @@ h5 {
     opacity: 1;
 }
 
+.menu-button-dropdown {
+    position: relative;
+    display: inline-block;
+    transition: 0.4s linear;
+    text-align: center;
+    color: #3a3a3a;
+}
+
+.submenu {
+    display: block;
+    position: absolute;
+    text-align: center;
+    /* left: 0; */
+    top: 100%;
+    text-decoration: none;
+    color: #3a3a3a;
+    /* background-color: #b5b5b5; */
+    min-width: 100%;
+    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+    z-index: 100;
+    opacity: 0;
+    transition: 0.2s ease;
+    visibility: hidden;
+    transform: translateY(-10px);
+}
+
+.submenuhref    {
+    color: #3a3a3a !important;
+}
+
+.menu-button-dropdown:hover .submenu {
+    visibility: visible;
+    text-align: center;
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+    color: #3a3a3a;
+}
+
+.submenu a  {
+    text-decoration: none;
+}
+
+.menu-button-dropdown:hover {
+    /* background-color: rgb(203, 198, 193); */
+}
+
+.menu-button-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+    z-index: 1;
+}
+
 .header-inner {
     display: flex;
     justify-content: space-around;
@@ -68,6 +124,7 @@ h5 {
 }
 @media (prefers-reduced-motion: no-preference) {
     .header-inner {
+        display: "";
       /* transition: opacity 1.5s ease; */
     }
   }
@@ -148,6 +205,10 @@ h5 {
     background-size: cover;
     -webkit-background-size: cover;
 
+}
+
+.side {
+    height: 30vh;
 }
 
 .intro_title {
@@ -238,4 +299,9 @@ h5 {
 .main-page-img {
     width: 500px;
 
+}
+
+/*404 page*/
+.page404  {
+    color: #3a3a3a;
 }
