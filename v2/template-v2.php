@@ -8,8 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Finlandica:wght@500&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Finlandica:wght@500&family=Montserrat&display=swap"
+        rel="stylesheet">
     <title>InterGems -</title>
 
 
@@ -21,10 +22,11 @@
 </body>
 <div class="header">
     <div class="container menu">
-        <div class="header_inner">
+        <div class="header-inner header-inner-transition">
             <div class="header_logo">
-                <a href="#"></a>
-                <img src="logo.svg" alt="">
+                <a href="index.php">
+                    <img src="logo.svg" alt="">
+                </a>
 
             </div>
             <nav class="navbar">
@@ -46,11 +48,27 @@
     </div>
 </div>
 <div class="page_content">
-    <?php echo $content 
-    ?>
+    <?php echo $content
+        ?>
 </div>
 <footer>
+    <script>
+        // Удалить CSS-класс square-transition
+        const headeranim = document.querySelector('.header-inner');
+        headeranim.classList.remove('header-inner-transition');
 
+        // Добавить наблюдение за появлением элемента
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    headeranim.classList.remove('header-inner-transition');
+                    return;
+                }
+                headeranim.classList.add('header-inner-transition');
+            });
+        });
+        observer.observe(document.querySelector('.intro'));
+    </script>
 </footer>
 
 </html>
