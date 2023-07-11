@@ -4,11 +4,13 @@
 <link rel="stylesheet" href="style.css">
 <title>Intergems –
     <?php echo $title; ?>
+
 </title>
 <?php
 $servername = "localhost";
 $username = "site";
 $password = "4316464";
+$dbname = "intergems";
 $dbname = "intergems";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -33,7 +35,7 @@ if ($conn->connect_error) {
     </div>
 
 
-    <div class="menu-bar">
+    <div class="menu_bar" id="myHeader">
         <a href="index.php">
             <div class="menu-button">
                 <p>О компании</p>
@@ -48,15 +50,15 @@ if ($conn->connect_error) {
                 <?php
                 $sql = "SHOW TABLES";
                 $result = $conn->query($sql);
-                
+
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_row()) {
                         $table_name = $row[0];
-                            echo "<a href='stock.php?category=" . $table_name . "'>
+                        echo "<a href='stock.php?category=" . $table_name . "'>
                                     <div class='menu-button'>
                                         <p>"
-                                            . $table_name .
-                                        "</p>
+                            . $table_name .
+                            "</p>
                                     </div>
                                 </a>";
                     }
@@ -96,5 +98,6 @@ if ($conn->connect_error) {
         </div>
     </div>
 </footer>
+<script src="v2/script/sticky.js"></script>
 
 </html>
