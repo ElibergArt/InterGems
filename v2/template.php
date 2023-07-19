@@ -103,25 +103,6 @@
         });
         observer.observe(document.querySelector('.intro'));
     </script>
-    <!-- <script>
-        window.addEventListener('scroll', function () {
-            var element = document.querySelector('.intro_title');
-            var position = element.getBoundingClientRect().top;
-            var windowHeight = window.innerHeight;
-
-            if (position < windowHeight) {
-                element.classList.add('fade-out');
-            } else {
-                element.classList.remove('fade-out');
-            }
-            if (position > windowHeight) {
-                element.classList.add('fade-in');
-            }
-            else {
-                element.classList.remove('fade-in');
-            }
-        });
-    </script> -->
     <script>
         window.addEventListener('scroll', function() {
   var element = document.querySelector('.intro_title');
