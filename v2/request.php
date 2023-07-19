@@ -45,7 +45,7 @@ foreach ($result as $row) {
                 <h4>
                     " . $row['color'] . " " . $row['gem'] . "
                 </h4>
-                    <div class='stock_image-container'><img class='stock_image-container' src='" . $row['img_path'] . "'  alt='Image'> 
+                    <div class='stock_image-container'><img class='stock_image-container' src='assets/img/gems/" . $category . "/" . $row['num'] . ".jpg'  alt='Image'> 
                     </div>
                     <p>Вес: " . $row['weight'] . "</p>
                     <p>Огранка: " . $row['cut'] . "<p>       

@@ -12,7 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Finlandica:wght@500&family=Montserrat&display=swap"
         rel="stylesheet">
     <title>InterGems -</title>
+    <?php
+    $servername = "localhost";
+    $username = "site";
+    $password = "4316464";
+    $dbname = "intergems";
 
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Ошибка: " . $conn->connect_error);
+
+    }
+    ?>
 
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="stylesheet" href="assets/styles/style_side.css">
@@ -32,7 +43,28 @@
             </div>
             <nav class="navbar">
                 <a class="nav-link" href="index.php">О нас</a>
-                <a class="nav-link" href="catalogue.php">Каталог</a>
+                <a class="hidden-link" href="#">
+                    <div class="nav-link menu-button-dropdown">Каталог
+
+                        <div class='submenu'>
+                            <?php
+                            $sql = "SHOW TABLES";
+                            $result = $conn->query($sql);
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_row()) {
+                                    $table_name = $row[0];
+                                    echo "<a class'menu-button-dropdown-content' href='stock.php?category=" . $table_name . "'>" . $table_name . "
+                                </a>";
+                                }
+                            } else {
+                                echo "Таблица не найдена";
+                            }
+                            $conn->close();
+                            ?>
+                        </div>
+                    </div>
+                </a>
+
                 <a class="nav-link" href="#">Мероприятия</a>
                 <a class="nav-link" href="#">Контакты</a>
             </nav>
@@ -42,7 +74,7 @@
 </div>
 <div class="intro side">
     <!-- <div class="container"> -->
-        <!-- <div class="intro_title">
+    <!-- <div class="intro_title">
             <h1 class="intro_bigtitle">InterGems</h1>
             <h2 class="intro_stitle">Премиальная огранка и потрясающее качество</h2>
         </div> -->

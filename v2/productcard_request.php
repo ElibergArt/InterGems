@@ -42,8 +42,11 @@ if ($result) {
         //echo "<img height='100px' src='" . $row['img_path'] . "' alt='image'>"; //remove height at end
         echo "<div class='productcard_container'>
         <div class='productcard_album'>
-            <img  src=' " . $row['img_path'] . "' alt=''>
+            <img  src='assets/img/gems/" . $category . "/" . $row['num'] . ".jpg' alt=''>
         </div>
+
+        
+
         <div class='productcard_text'>
             <h2> " . $row['gem'] . "</h2>
             <p>Цвет: " . $row['color'] . "</p>

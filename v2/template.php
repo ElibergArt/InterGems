@@ -45,27 +45,27 @@
             </div>
             <nav class="navbar">
                 <a class="nav-link" href="index.php">О нас</a>
+                <a class="hidden-link" href="#">
+                    <div class="nav-link menu-button-dropdown">Каталог
 
-                <div class="nav-link menu-button-dropdown">Каталог
-
-                    <div class='submenu'>
-                        <?php
-                        $sql = "SHOW TABLES";
-                        $result = $conn->query($sql);
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_row()) {
-                                $table_name = $row[0];
-                                echo "<a class'submenuhref' href='stock.php?category=" . $table_name . "'>" . $table_name . "
+                        <div class='submenu'>
+                            <?php
+                            $sql = "SHOW TABLES";
+                            $result = $conn->query($sql);
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_row()) {
+                                    $table_name = $row[0];
+                                    echo "<a class'menu-button-dropdown-content' href='stock.php?category=" . $table_name . "'>" . $table_name . "
                                 </a>";
+                                }
+                            } else {
+                                echo "Таблица не найдена";
                             }
-                        } else {
-                            echo "Таблица не найдена";
-                        }
-                        $conn->close();
-                        ?>
+                            $conn->close();
+                            ?>
+                        </div>
                     </div>
-                </div>
-
+                </a>
 
                 <a class="nav-link" href="#">Мероприятия</a>
                 <a class="nav-link" href="#">Контакты</a>
@@ -102,6 +102,35 @@
             });
         });
         observer.observe(document.querySelector('.intro'));
+    </script>
+    <!-- <script>
+        window.addEventListener('scroll', function () {
+            var element = document.querySelector('.intro_title');
+            var position = element.getBoundingClientRect().top;
+            var windowHeight = window.innerHeight;
+
+            if (position < windowHeight) {
+                element.classList.add('fade-out');
+            } else {
+                element.classList.remove('fade-out');
+            }
+            if (position > windowHeight) {
+                element.classList.add('fade-in');
+            }
+            else {
+                element.classList.remove('fade-in');
+            }
+        });
+    </script> -->
+    <script>
+        window.addEventListener('scroll', function() {
+  var element = document.querySelector('.intro_title');
+  if (window.scrollY > 0) {
+    element.classList.add('fade-out');
+  } else {
+    element.classList.remove('fade-out');
+  }
+});
     </script>
 </footer>
 
