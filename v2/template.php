@@ -67,7 +67,7 @@
                     </div>
                 </a>
 
-                <a class="nav-link" href="#">Мероприятия</a>
+                <a class="nav-link" href="news.php">Новости</a>
                 <a class="nav-link" href="contacts.php">Контакты</a>
             </nav>
         </div>
@@ -104,14 +104,14 @@
         observer.observe(document.querySelector('.intro'));
     </script>
     <script>
-        window.addEventListener('scroll', function() {
-  var element = document.querySelector('.intro_title');
-  if (window.scrollY > 0) {
-    element.classList.add('fade-out');
-  } else {
-    element.classList.remove('fade-out');
-  }
-});
+        window.addEventListener('scroll', function () {
+            var element = document.querySelector('.intro_title');
+            if (window.scrollY > 0) {
+                element.classList.add('fade-out');
+            } else {
+                element.classList.remove('fade-out');
+            }
+        });
     </script>
 </footer>
 

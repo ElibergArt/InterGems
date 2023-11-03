@@ -66,7 +66,7 @@
                 </a>
 
                 <a class="nav-link" href="#">Мероприятия</a>
-                <a class="nav-link" href="#">Контакты</a>
+                <a class="nav-link" href="contacts.php">Контакты</a>
             </nav>
         </div>
     </div>
