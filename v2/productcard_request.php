@@ -6,7 +6,7 @@ if (!isset($_GET['id'])) {
 }
 
 if (!isset($_GET['category'])) {
-     header("Location: 405.php");
+    header("Location: 405.php");
     exit();
 }
 
@@ -42,15 +42,40 @@ if ($result) {
         //echo "<img height='100px' src='" . $row['img_path'] . "' alt='image'>"; //remove height at end
         echo "<div class='productcard_container'>
         <div class='productcard_album'>
-            <img  src='assets/img/gems/" . $category . "/" . $row['num'] . ".jpg' alt=''>
-        </div>
+            
+            <div class='slideshow-container'>
 
-        
+                <div class='mySlides fade'>
+            <div class='numbertext'>1 / 3</div>
+            <img src='img/GEMS/TN/TN1.JPG' style='height:100%'>
+            
+             </div>
+    
+             <div class='mySlides fade'>
+            <div class='numbertext'>2 / 3</div>
+            <img src='img/GEMS/TN/TN2.JPG' style='height:100%'>
+            
+             </div>
+    
+             <div class='mySlides fade'>
+            <div class='numbertext'>3 / 3</div>
+            <img src='img/GEMS/TN/TN6.JPG' style='height:100%'>
+            
+            </div>
+    
+        <a class='prev' onclick='plusSlides(-1)'><</a>
+        <a class='next' onclick='plusSlides(1)'>></a>
+    
+    </div>
+    <br>
+    
+
+        </div>
 
         <div class='productcard_text'>
             <h2> " . $row['gem'] . "</h2>
             </br>
-            <h3>" . $row['num'] . "</h3>
+            <h4>Артикул: " . $row['num'] . "</h4>
             <p>Цвет: " . $row['color'] . "</p>
             <p>Вес: " . $row['weight'] . " ct</p> 
             <p>Форма: " . $row['cut'] . "  </p> 
@@ -67,7 +92,11 @@ if ($result) {
 
     } else {
         // Если метод mysqli_fetch_assoc() вернул null
-        echo "Ошибка: товар не найден";
+        echo "
+        <div class='productcard_text'>
+        <h2>Ошибка: товар не найден</h2>
+        </div>
+        ";
     }
 } else {
     // Если запрос не выполнен

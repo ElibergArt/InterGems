@@ -36,12 +36,14 @@ echo "<div class='stock_table-name'>
     </div>  
     ";
 echo "<div class='stock_base'>";
+echo "";
+// тут будет плашка фильтров. В графе реквеста надо прописать идентичность слов "полихромный" и "арбузный" для правильной работы фильтра
 foreach ($result as $row) {
     echo "
     <a href='productcard.php?category=" . $category . "&id=" . $row['id'] . "'>
     
         
-            <div class='product_card'>
+            <div class='product_card " . $row['color'] . " " . $row['cut'] . " " . $row['type'] . "'>
                 <h4>
                     " . $row['color'] . " " . $row['gem'] . "
                 </h4>
