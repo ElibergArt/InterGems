@@ -410,7 +410,7 @@ h5 {
     justify-content: center;
     align-items: center;
     align-content: center;
-    outline: hidden;
+    outline: hidden; 
     width: 20em;
     height: 20em;
     border-radius: 1em;
@@ -441,7 +441,8 @@ h5 {
     color: #3a3a3a;
 }
 
-/*CAROUSEL*/
+/*CAROUSEL*/ /*test*/
+
 
 * {
     box-sizing: content-box;
@@ -460,6 +461,15 @@ img {
     max-width: auto;
     position: relative;
     margin: auto;
+    width: 20em;
+    height: 20em;
+
+
+}
+
+.slideshow-container img    {
+    border-radius: 1em;
+    overflow: hidden;
 }
 
 /* Next & previous buttons */
@@ -491,7 +501,7 @@ img {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Caption text */
+/* Caption text NOT IN USE*/
 .text {
     color: #f2f2f2;
     font-size: 15px;
@@ -511,7 +521,7 @@ img {
     top: 0;
 }
 
-/* The dots/bullets/indicators */
+/* The dots/bullets/indicators  NOT IN USE*/
 .dot {
     cursor: pointer;
     height: 15px;
@@ -529,7 +539,7 @@ img {
 }
 
 /* Fading animation */
-/* .fade {
+.fade {
     animation-name: fade;
     animation-duration: 1.5s;
 }
@@ -542,7 +552,7 @@ img {
     to {
         opacity: 1
     }
-} */
+}
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {

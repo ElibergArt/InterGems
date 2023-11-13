@@ -1,6 +1,6 @@
 <?php
 // Проверка, что параметр id передан в URL
-if (!isset($_GET['id'])) {
+if (!isset($_GET['num'])) {
     header("Location: stock.php");
     exit();
 }
@@ -12,7 +12,7 @@ if (!isset($_GET['category'])) {
 
 
 // Получение значения параметра id из URL
-$id = $_GET['id'];
+$num = $_GET['num'];
 $category = $_GET['category'];
 
 // Подключение к базе данных
@@ -29,7 +29,7 @@ if (!$conn) {
 }
 
 // Запрос SELECT для получения информации о товаре
-$sql = "SELECT * FROM $category WHERE id='$id'";
+$sql = "SELECT * FROM $category WHERE num='$num'";
 $result = mysqli_query($conn, $sql);
 
 // Проверка результата запроса
@@ -46,21 +46,24 @@ if ($result) {
             <div class='slideshow-container'>
 
                 <div class='mySlides fade'>
-            <div class='numbertext'>1 / 3</div>
-            <img src='img/GEMS/TN/TN1.JPG' style='height:100%'>
-            
+            <div class='numbertext'>1 / 4</div>
+            <img src='img/GEMS/" . $category . "/" . $num . "/1.jpeg' style='height:100%'>
              </div>
     
              <div class='mySlides fade'>
-            <div class='numbertext'>2 / 3</div>
-            <img src='img/GEMS/TN/TN2.JPG' style='height:100%'>
+            <div class='numbertext'>2 / 4</div>
+            <img src='img/GEMS/" . $category . "/" . $num . "/2.jpeg' style='height:100%'>
             
              </div>
     
-             <div class='mySlides fade'>
-            <div class='numbertext'>3 / 3</div>
-            <img src='img/GEMS/TN/TN6.JPG' style='height:100%'>
-            
+            <div class='mySlides fade'>
+            <div class='numbertext'>3 / 4</div>
+            <img src='img/GEMS/" . $category . "/" . $num . "/3.jpeg' style='height:100%'>            
+            </div>
+
+            <div class='mySlides fade'>
+            <div class='numbertext'>4 / 4</div>
+            <img src='img/GEMS/" . $category . "/" . $num . "/4.jpeg' style='height:100%'>            
             </div>
     
         <a class='prev' onclick='plusSlides(-1)'><</a>

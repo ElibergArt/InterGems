@@ -40,17 +40,17 @@ echo "";
 // тут будет плашка фильтров. В графе реквеста надо прописать идентичность слов "полихромный" и "арбузный" для правильной работы фильтра
 foreach ($result as $row) {
     echo "
-    <a href='productcard.php?category=" . $category . "&id=" . $row['id'] . "'>
+    <a href='productcard.php?category=" . $category . "&num=" . $row['num'] . "'>
     
         
             <div class='product_card " . $row['color'] . " " . $row['cut'] . " " . $row['type'] . "'>
                 <h4>
                     " . $row['color'] . " " . $row['gem'] . "
                 </h4>
-                    <div class='stock_image-container'><img class='stock_image-container' src='assets/img/gems/" . $category . "/" . $row['num'] . ".jpg'  alt='Image'> 
+                    <div class='stock_image-container'><img class='stock_image-container' src='img/gems/" . $category . "/" . $row['num'] . "/1.jpeg'  alt='Image'> 
                     </div>
                     <p>Вес: " . $row['weight'] . "</p>
-                    <p>Огранка: " . $row['cut'] . "<p>       
+                    <p>Форма: " . $row['cut'] . "<p>       
                  </a>
              </div>";
 }
